@@ -1,0 +1,94 @@
+#nav a{
+    color:  white;
+} 
+
+#search-bar {
+    margin: 0 auto;
+    width: 375px;
+}
+
+#dropdown a {
+    color: black;
+}
+
+#logo {
+    width: 50px;
+    height: auto;
+    /* padding: 5px; */
+}
+
+h1 {
+    padding: 30px;
+}
+
+#sermons {
+    margin: 10px;
+    /* justify-content: center !important;  */
+}
+
+
+
+#midweek-messages {
+    margin: 10px;
+    /* object-fit: cover; */
+    width: 375px;
+
+}
+
+#sermon-pic{
+    width: 350px;
+    height: 225px;
+    padding-bottom: 15px;
+    object-fit: cover;
+}
+
+.hide {
+    display: none;
+}
+
+#myTab {
+    margin-bottom: 15px;
+}
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#212529;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+    cursor: pointer;
+    text-decoration: none;
+    padding-top: 14px;
+    z-index: 1;
+}
+
+.my-float{
+	margin-top:22px;
+    padding-top: 22px;
+    color:#FFF;
+}
+
+.float :hover{
+    color:#FFF;
+}
+
+#verse-container {
+    margin: 15px;
+    margin-top: 20px;
+    padding: 15px;
+}
+
+#random-button {
+    margin: 5px;
+    margin-bottom: 15px;
+}
+
+#verse-info {
+    font-style: italic;
+}
+

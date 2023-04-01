@@ -1,0 +1,838 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sermons</title>
+    <link rel="icon" type="image/x-icon" href="https://cck.org.sg/wp-content/uploads/2017/11/cropped-ccklogo2.gif">
+    <link rel="stylesheet" href="sermons.css">
+    <script src="./sermon.js" defer></script>
+    <script src="https://kit.fontawesome.com/89c0681f06.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav id="nav" class="navbar navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="https://cck.org.sg/"><img id="logo" src="https://cck.org.sg/wp-content/uploads/2017/11/cropped-ccklogo2.gif"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="https://cck.org.sg/about/">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Sermons</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Ministries
+              </a>
+              <ul id="dropdown" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="https://cck.org.sg/ministries/children/">Agape Children</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="https://cck.org.sg/ministries/cells/">Cell Groups</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="https://cck.org.sg/ministries/filipino-fellowship/">Filipino Fellowship</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="https://cck.org.sg/ministries/youth/">Youth Ministry</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="https://cck.org.sg/ministries/women/">Women's Ministry</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="https://cck.org.sg/ministries/men/">Men's Ministry</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="https://cck.org.sg/ministries/music/">Sound & Music Ministry</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="https://cck.org.sg/ministries/missions/">Missions & Outreach</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="https://cck.org.sg/chaplaincy/">Chaplaincy</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="https://cck.org.sg/contact/">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="https://cck.org.sg/category/events/">Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="https://cck.org.sg/membersonly/">Members Only</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <a onclick="topFunction()" class="float">
+      <i class="fa-solid fa-arrow-up"></i>
+      </a>
+
+
+<div id="verse-container" class="mx-auto col-10-md bg-body rounded text-center">
+
+  <h6 id="random-verse">Get a Random Verse</h6>
+
+  <div id="verse-div" class="text-center col-12">
+
+  </div>
+  <button id="random-button" class='btn btn-secondary'>Generate</button>
+
+</div>
+
+    <ul class="nav nav-tabs flex-column flex-sm-row nav-fill" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Sermons</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Mid-Week Messages</button>
+      </li>
+
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+        <div class="container">
+
+        <form class="align-items-center">
+          <div id="search-bar" class="form-floating mb-3">
+            <input type="search" class="form-control" id="floatingInput" placeholder="name@example.com" data-search>
+            <label for="floatingInput">Search (By Sermon Title)</label>
+          </div>
+        </form>
+        
+          <div class="row">
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1583320975624-d099f8c042f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80">
+              <h3 id="sermon-title">Food offered to Idols</h3>
+              <p><i>19th February 2023</i>
+              </br>Exo 24:12-end; 1 Corinthians 8; Matthew 15:10-20
+              </br>Revd Bertram Cheong
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/19Feb23.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div> 
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1520923642038-b4259acecbd7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1638&q=80">
+              <h3 id="sermon-title">Living the Life That God has Called You To</h3>
+              <p><i>12th February 2023</i>
+              </br>Gene 2:18-25; 1 Corinthians 7:17-24; Matthew 19:3-12
+              </br>Revd Bertram Cheong
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/12Feb23.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div> 
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1504196877113-b6ec66380c41?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1738&q=80">
+              <h3 id="sermon-title">Sexual Immorality</h3>
+              <p><i>5th February 2023</i>
+              </br>Isa 58:1-9a; 1 Corinthians 6:12-20; John 7:53-8:11
+              </br>Revd Bertram Cheong
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/05Feb23.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div> 
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1596430222039-4a2d7b4cd767?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80">
+              <h3 id="sermon-title">Ministry of Apostles</h3>
+              <p><i>22nd January 2023</i>
+              </br>Isa 9:1-41 Corinthians 4:1-21; Mark 3:13-19
+              </br>Revd Bertram Cheong
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/23Jan23.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div> 
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1477672680933-0287a151330e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80">
+              <h3 id="sermon-title">Divisions in the church</h3>
+              <p><i>15th January 2023</i>
+              </br>Isa 49:1-71 Corinthians 1:13-17; Matthew 12:25b-37
+              </br>Ps Wong Kar Foon
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/16Jan23.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div> 
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1555892727-55b51e5fceae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80">
+              <h3 id="sermon-title">Christ Crucified</h3>
+              <p><i>8th January 2023</i>
+              </br>Isa 60:1-6; 1 Corinthians 1:18-31; Lk 9:21-27
+              </br>Revd Bertram Cheong
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/08Jan23.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div> 
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1555696958-c5049b866f6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80">
+              <h3 id="sermon-title">Covenant Community - The Imperfect Church</h3>
+              <p><i>1st January 2023</i>
+              </br>Exo 19:1-6, 20:2-20; Heb 2:10-13; Mt 22:35-40
+              </br>Revd Bertram Cheong
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/01Jan23.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div> 
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80">
+              <h3 id="sermon-title">How do you tell a real Christian apart?</h3>
+              <p><i>18th December 2022</i>
+              </br>Ps 122; Rom 12:1-3, 9-21; Jn 13:31-35
+              </br>Revd Bertram Cheong
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/18Dec22.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div> 
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1630774980255-4b83631ae6f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80">
+              <h3 id="sermon-title">How do you respond after God has forgiven you?</h3>
+              <p><i>11th December 2022</i>
+              </br>Exo 35:4-9, 20-29; Heb 10:19-31; Lk 7:36-50
+              </br>Sister Sarah Seah
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/11Dec22.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div> 
+
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1447619297994-b829cc1ab44a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1706&q=80">
+              <h3 id="sermon-title">God restores His people</h3>
+              <p><i>4th December 2022</i>
+              </br>Exo 34:1, 4-10; 1 Pet 1:3-12; Jn 8:1-11
+              </br>Revd Bertram Cheong
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/04Dec22.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div> 
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1621773875315-416e2997ed52?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2062&q=80">
+              <h3 id="sermon-title">Who are the sojourners among us today</h3>
+              <p><i>27th November 2022</i>
+              </br>Exo 22:21-27, 23:9, Gal 6:8-10, Matt 5:14-16
+              </br>Revd Bertram Cheong
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/27Nov22.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div> 
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1515162305285-0293e4767cc2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80">
+              <h3 id="sermon-title">The Church is not bulletproof!</h3>
+              <p><i>20th November 2022</i>
+              </br>Exo 32:25-35; Heb 12:3-11; Jn 13:1-5
+              </br>Revd Bertram Cheong
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/20Nov22.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div> 
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1452915858640-325b467fe554?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1891&q=80">
+              <h3 id="sermon-title">What do you do when your community fouls up big-time?</h3>
+              <p><i>13th November 2022</i>
+              </br>Exo 32:1, 6-14; Heb 4:3-13; Mt 23:37-24:2
+              </br>Revd Eben Grobbelaar
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/13Nov22.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div> 
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1541697367348-dfc31a1611dc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80">
+              <h3 id="sermon-title">Missions Sunday - Deanery of Cambodia</h3>
+              <p><i>6th November 2022</i>
+              </br>Sister Gwendolin Seah
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/07Nov22.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div>
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1511721285502-9f81e79be874?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80">
+              <h3 id="sermon-title">Consolidating</h3>
+              <p><i>23rd October 2022</i>
+              </br>Exo 18:13-27; 2 Tim 3:14-4:5; Lk 18:1-8
+              </br>Revd Bertram Cheong
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/23Oct22.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div>
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80">
+              <h3 id="sermon-title">Baby steps</h3>
+              <p><i>16th October 2022</i>
+              </br>Exo 17:8-16; 2 Tim 2:8-15; Lk 17:11-19
+              </br>Ps Wong Kar Foon
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/16Oct22.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div>
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1599340695274-f8a2f344174d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80">
+              <h3 id="sermon-title">Israel flunks its first test</h3>
+              <p><i>9th October 2022</i>
+              </br>Exo 15:22-26, 16:13-30; 1 Tim 6:6-19; Lk 16:19-end
+              </br>Revd Bertram Cheong
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/09Oct22.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div>
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1594342436424-dda50df715d9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80">
+              <h3 id="sermon-title">Crossing the Red Sea</h3>
+              <p><i>25th September 2022</i>
+              </br>Exo 14:1-14, 19-31; 1 Tim 2:1-7; Jn 18:33-37
+              </br>Revd Bertram Cheong
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/25Sept22.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div>
+
+            
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1623412078972-286a1ea7947d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2664&q=80">
+              <h3 id="sermon-title">Remember what the Lord did</h3>
+              <p><i>11th September 2022</i>
+              </br>Exo 12:1-13, 29-32; Philm 1-21; Mk 1:14-20
+              </br>Revd Jerry Brownell
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/11Sept22.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div>
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1566827886072-417be1953f36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80">
+              <h3 id="sermon-title">Education Sunday</h3>
+              <p><i>4th September 2022</i>
+              </br>Revd Bertram Cheong
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/04Sept22.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div>
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1660937472479-f0d9608e8370?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80">
+              <h3 id="sermon-title">Your last chance</h3>
+              <p><i>28th August 2022</i>
+              </br>Exo 4:19-23; Heb 13:1-8, 15-16; Mk 12:28-34
+              </br>Revd Bertram Cheong
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/28Aug22.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div>
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1457131760772-7017c6180f05?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1706&q=80">
+              <h3 id="sermon-title">Happily ever after?</h3>
+              <p><i>21st August 2022</i>
+              </br>Exo 5:1-9, 5:19-6:1; Heb 12:18-end; Jn 15:17-end
+              </br>Revd Bertram Cheong
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/21Aug22.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div>
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80">
+              <h3 id="sermon-title">World empire, or God's kingdom?</h3>
+              <p><i>14th August 2022</i>
+              </br>Exo 4:18-23; Heb 11:29-12:2; Mk 10:35-45
+              </br>Ps Wong Kar Foon
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/14Aug22.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div>
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1584447128309-b66b7a4d1b63?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1570&q=80">
+              <h3 id="sermon-title">God does not give up</h3>
+              <p><i>7th August 2022</i>
+              </br>Exo 2:23-3:8; Heb 11:1-3, 8-16; Mk 10:17-31
+              </br>Revd Bertram Cheong
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/07Aug22.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div>
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1586370740632-f910eb4ad077?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2216&q=80">
+              <h3 id="sermon-title">Enter the hero</h3>
+              <p><i>31st July 2022</i>
+              </br>Exo 2:1-10; Col 3:1-11; Mk 10:2-16
+              </br>Revd Bertram Cheong
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/31July22.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div>
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80">
+              <h3 id="sermon-title">Change in management</h3>
+              <p><i>24th July 2022</i>
+              </br>Exo 1:8-17; Col 2:6-15; Mk 7:24-end
+              </br>Revd Bertram Cheong
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/24July22.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div>
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1600779547877-be592ef5aad3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80">
+              <h3 id="sermon-title">The stage is set</h3>
+              <p><i>17th July 2022</i>
+              </br>Gen 50:15-21; Col 1:15-28; Mk 7:1-8, 14-15, 21-23
+              </br>Revd Bertram Cheong
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/17July22.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div>
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1511895426328-dc8714191300?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80">
+              <h3 id="sermon-title">Family Reunion</h3>
+              <p><i>10th July 2022</i>
+              </br>Gen 46:1-7; Col 1:1-14; Jn 6:56-69
+              </br>Revd Bertram Cheong
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/10July22.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div>
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1522332896918-9622e84d53d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80">
+              <h3 id="sermon-title">Courage does not have an age</h3>
+              <p><i>3rd July 2022</i>
+              </br>1 Sam 16:1-13; Eph 2:19-end; Mk 8:27-end
+              </br>Sarah Seah
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/03July22.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div>
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1655998320246-ea729a27a34f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80">
+              <h3 id="sermon-title">Payback time!</h3>
+              <p><i>26th June 2022</i>
+              </br>Gen 42:6-9a, 45:1-9; Gal 5:1, 13-25; Jn 6:51-58
+              </br>Revd Bertram Cheong
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/26June22.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div>
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80">
+              <h3 id="sermon-title">Rags to riches</h3>
+              <p><i>19th June 2022</i>
+              </br>Gen 39:21-40:15; Gal 3:23-end; Jn 6:35, 41-51
+              </br>Revd Bertram Cheong
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/19June22.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div>
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1654554396063-09b7b57e7c74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2664&q=80">
+              <h3 id="sermon-title">Temptation vs Righteousness</h3>
+              <p><i>12th June 2022</i>
+              </br>Gen 39:1-20; Rom 5:1-5; Jn 6:24-35
+              </br>Ps Wong Kar Foon
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/12June22.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div>
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1654284392067-10486b12edc5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80">
+              <h3 id="sermon-title">Ancestor of Jesus?!</h3>
+              <p><i>5th June 2022</i>
+              </br>Gen 38:12-26; Acts 2:1-21; Mk 6:30-34, 53-end
+              </br>Revd Bertram Cheong
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/5June22.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div>
+    
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1501823129913-a386fe76d87a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1450&q=80">
+              <h3 id="sermon-title">God blesses and renames Jacob</h3>
+              <p><i>22nd May 2022</i>
+              </br>Gen 35:1-15; Acts 11:1-18; Mk 5:21-end
+              </br>Revd Bertram Cheong
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/22ndMay.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div>
+    
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1507692049790-de58290a4334?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80">
+              <h3 id="sermon-title">Run no more!</h3>
+              <p><i>8th May 2022</i>
+              </br>Gen 32:22-31; Acts 9:36-end; Lk 1:57-66, 80
+              </br>Revd Jerry Brownell
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/100522.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div>
+    
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1654512799227-94e56fbed599?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80">
+              <h3 id="sermon-title">Send a crook to catch a crook</h3>
+              <p><i>1st May 2022</i>
+              </br>Gen 30:25-43; Acts 9:1-6; Mk 3:20-end
+              </br>Revd Bertram Cheong
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/010522.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div>
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1654284392067-10486b12edc5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80">
+              <h3 id="sermon-title">Jacob the con-man</h3>
+              <p><i>24th April 2022</i>
+              </br>Gen 28:1-5; Acts 5:27-32; Jn 3:1-17
+              </br>Revd Bertram Cheong
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/240422.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div>
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1654783081263-3c35d84445e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80">
+              <h3 id="sermon-title">He is risen!</h3>
+              <p><i>17th April 2022</i>
+              </br>Isa 65:17-end; Acts 10:34-43; Jn 20:1-23
+              </br>Revd Bertram Cheong
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/170422.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div>
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1586210476694-4882220998e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80">
+              <h3 id="sermon-title">The Last Supper</h3>
+              <p><i>14th April 2022</i>
+              </br>Exo 12:1-4, 11-14; 1 Cor 11:23-26; Jn 13:1-20
+              </br>Revd Bertram Cheong
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/140422.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div>
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1655434065501-246b35310ab7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1411&q=80">
+              <h3 id="sermon-title">God remembers promises</h3>
+              <p><i>3rd April 2022</i>
+              </br>Gen 26:1-5; Phil 3:4b-14; Jn 15:9-17
+              </br>Revd Bertram Cheong
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/03April22.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div>
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1655667995118-56d57c6f628e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1314&q=80">
+              <h3 id="sermon-title">Real heroes & the grace of God</h3>
+              <p><i>20th March 2022</i>
+              </br>Gen 26:6-11; 2 Cor 5:16-end; Jn 15:1-8
+              </br>Revd Jerry Brownell
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/20March22.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div>
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1533000759938-aa0ba70beceb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80">
+              <h3 id="sermon-title">Give me the one you love</h3>
+              <p><i>6th March 2022</i>
+              </br>Gen 22:1-19; Rom 10:8b-13; Jn 3:14-21
+              </br>Revd Bertram Cheong
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/WhatsApp%20Audio%202022-03-06%20at%201.27.03%20PM.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div>
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1656870680710-b2529c2580f8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80">
+              <h3 id="sermon-title">Isaac & Ishmael</h3>
+              <p><i>27th February 2022</i>
+              </br>Gen 21:1-21; 2 Cor 3:12-4:2; Jn 2:13-22
+              </br>Revd Bertram Cheong
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/upload/sermon/27%20Feb%2022%20CCK%20Sermon.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div>
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1593526613712-7b4b9a707330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80">
+              <h3 id="sermon-title">God's Promises</h3>
+              <p><i>6th February 2022</i>
+              </br>Gen 15:1-6; 1 Cor 15:1-11; Mk 9:2-9
+              </br>Revd Bertram Cheong
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/wp-content/uploads/2022/02/060222-Mission-Impossible-Gods-Promises_Genesis-15v1-6-1-Corinthians-15v1-11-Mark-9v2-9_Revd-Bertram-online-audio-converter.com_.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div>
+
+            <div id="sermons" class="col shadow-sm p-3 mb-5 bg-body rounded">
+              <img id="sermon-pic" class="rounded mx-auto d-block" src="https://images.unsplash.com/photo-1517176191003-46c068487dd4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80">
+              <h3 id="sermon-title">God doesn't send us on holidays</h3>
+              <p><i>30th January 2022</i>
+              </br>Jer 1:1-10, 17-19; 1 Cor 13; Mk 6:14-29
+              </br>Revd Bertram Cheong
+              </p>
+              <audio controls>
+                <source src="https://cck.org.sg/wp-content/uploads/2022/02/300122-God-doesnt-send-us-on-holidays_-Jeremiah1v1-10-7-19-1-Corinthians-13-Mark-6v14-29_Revd-Bertram-online-audio-converter.com_.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+        <div class="container">
+          <div class="row">
+
+            <div id="midweek-messages" class="col-xxl-4 shadow-sm p-3 mb-5 bg-body rounded">
+              <div class="ratio ratio-1x1">
+                <iframe src="https://www.youtube.com/embed/soS0dkZ0IR0" title="YouTube video player" allowfullscreen></iframe>
+              </div>
+              <h3>Inane Inklings 13</h3>
+              <p><i>9th Sept 2022</i>
+              </br>Revd Bertram Cheong
+              </p>
+            </div>
+
+            <div id="midweek-messages" class="col-xxl-4 shadow-sm p-3 mb-5 bg-body rounded">
+              <div class="ratio ratio-1x1">
+                <iframe src="https://www.youtube.com/embed/KP3DPS68FO8" title="YouTube video player" allowfullscreen></iframe>
+              </div>
+              <h3>Inane Inklings 12</h3>
+              <p><i>3rd Sept 2022</i>
+              </br>Revd Bertram Cheong
+              </p>
+            </div>
+
+            <div id="midweek-messages" class="col-xxl-4 shadow-sm p-3 mb-5 bg-body rounded">
+              <div class="ratio ratio-1x1">
+                <iframe src="https://www.youtube.com/embed/t-ryQ-z8Dgk" title="YouTube video player" allowfullscreen></iframe>
+              </div>
+              <h3>Inane Inklings 11</h3>
+              <p><i>27th Aug 2022</i>
+              </br>Revd Bertram Cheong
+              </p>
+            </div>
+
+            <div id="midweek-messages" class="col-xxl-4 shadow-sm p-3 mb-5 bg-body rounded">
+              <div class="ratio ratio-1x1">
+                <iframe src="https://www.youtube.com/embed/OizvyVUpzNM" title="YouTube video player" allowfullscreen></iframe>
+              </div>
+              <h3>Inane Inklings 10</h3>
+              <p><i>13th Aug 2022</i>
+              </br>Revd Bertram Cheong
+              </p>
+            </div>
+
+            <div id="midweek-messages" class="col-xxl-4 shadow-sm p-3 mb-5 bg-body rounded">
+              <div class="ratio ratio-1x1">
+                <iframe src="https://www.youtube.com/embed/8koDjNc_NuA" title="YouTube video player" allowfullscreen></iframe>
+              </div>
+              <h3>Inane Inklings 9</h3>
+              <p><i>5th Aug 2022</i>
+              </br>Revd Bertram Cheong
+              </p>
+            </div>
+
+            <div id="midweek-messages" class="col-xxl-4 shadow-sm p-3 mb-5 bg-body rounded">
+              <div class="ratio ratio-1x1">
+                <iframe src="https://www.youtube.com/embed/i1H0PeE2Pu4" title="YouTube video player" allowfullscreen></iframe>
+              </div>
+              <h3>Inane Inklings 8</h3>
+              <p><i>30 Jul 2022</i>
+              </br>Revd Bertram Cheong
+              </p>
+            </div>
+
+            <div id="midweek-messages" class="col-xxl-4 shadow-sm p-3 mb-5 bg-body rounded">
+              <div class="ratio ratio-1x1">
+                <iframe src="https://www.youtube.com/embed/Wu3ZS9MFOvQ" title="YouTube video player" allowfullscreen></iframe>
+              </div>
+              <h3>Inane Inklings 7</h3>
+              <p><i>23rd Jul 2022</i>
+              </br>Revd Bertram Cheong
+              </p>
+            </div>
+
+            <div id="midweek-messages" class="col-xxl-4 shadow-sm p-3 mb-5 bg-body rounded">
+              <div class="ratio ratio-1x1">
+                <iframe class="embed-responsive-item"  src="https://www.youtube.com/embed/HTrzW3mXoyw" title="YouTube video player" allowfullscreen></iframe>
+              </div>
+              <h3>Inane Inklings 6</h3>
+              <p><i>16th Jul 2022</i>
+              </br>Revd Bertram Cheong
+              </p>
+            </div>
+
+            <div id="midweek-messages" class="col-xxl-4 shadow-sm p-3 mb-5 bg-body rounded">
+              <div class="ratio ratio-1x1">
+                <iframe class="embed-responsive-item"  src="https://www.youtube.com/embed/ZfVtSMsrnpY" title="YouTube video player" allowfullscreen></iframe>
+              </div>
+              <h3>Inane Inklings 5</h3>
+              <p><i>9th Jul 2022</i>
+              </br>Revd Bertram Cheong
+              </p>
+            </div>
+
+            <div id="midweek-messages" class="col-xxl-4 shadow-sm p-3 mb-5 bg-body rounded">
+              <div class="ratio ratio-1x1">
+                <iframe class="embed-responsive-item"  src="https://www.youtube.com/embed/pireza-hFVE" title="YouTube video player" allowfullscreen></iframe>
+              </div>
+              <h3>Inane Inklings 4</h3>
+              <p><i>1st Jul 2022</i>
+              </br>Revd Bertram Cheong
+              </p>
+            </div>
+
+            <div id="midweek-messages" class="col-xxl-4 shadow-sm p-3 mb-5 bg-body rounded">
+              <div class="ratio ratio-1x1">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/mkuUIWg-luQ" title="YouTube video player" allowfullscreen></iframe>
+              </div>
+              <h3>Inane Inklings 3</h3>
+              <p><i>25th June 2022</i>
+              </br>Revd Bertram Cheong
+              </p>
+            </div>
+
+            <div id="midweek-messages" class="col-xxl-4 shadow-sm p-3 mb-5 bg-body rounded">
+              <div class="ratio ratio-1x1">
+                <iframe class="embed-responsive-item"  src="https://www.youtube.com/embed/8rDOYbxl0NY" title="YouTube video player" allowfullscreen></iframe>
+              </div>
+              <h3>Inane Inklings 2</h3>
+              <p><i>18th June 2022</i>
+              </br>Revd Bertram Cheong
+              </p>
+            </div>
+
+            <div id="midweek-messages" class="col-xxl-4 shadow-sm p-3 mb-5 bg-body rounded">
+              <div class="ratio ratio-1x1">
+                <iframe class="embed-responsive-item"  src="https://www.youtube.com/embed/F6KOSC_PMHQ" title="YouTube video player" allowfullscreen></iframe>
+              </div>
+              <h3>Inane Inklings </h3>
+              <p><i>9th June 2022</i>
+              </br>Revd Bertram Cheong
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+   
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>
